@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weina.imhistory.mapper.ImHistoryMapper">
+    <resultMap id="ImHistoryResultMap" type="com.weina.imhistory.entity.ImHistory" >
+                    <result column="id" property="id"/>
+                    <result column="msg_id" property="msgId"/>
+                    <result column="send_time" property="sendTime"/>
+                    <result column="msg_from" property="msgFrom"/>
+                    <result column="msg_to" property="msgTo"/>
+                    <result column="chat_type" property="chatType"/>
+                    <result column="msg_type" property="msgType"/>
+                    <result column="ext" property="ext"/>
+            </resultMap>
+    <!-- wn_im_history table all fields -->
+    <sql id="ImHistory_Column_List" >
+        wn_im_history.id,	
+wn_im_history.msg_id,	
+wn_im_history.send_time,	
+wn_im_history.msg_from,	
+wn_im_history.msg_to,	
+wn_im_history.chat_type,	
+wn_im_history.msg_type,	
+wn_im_history.ext
+    </sql>
+
+</mapper>

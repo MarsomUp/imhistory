@@ -1,0 +1,27 @@
+server:
+  port: 9002
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wn_f2f_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: myc123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    max-active: 20
+    initial-size: 5
+    min-idle: 3
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    test-while-idle: 30000
+    test-on-borrow: true
+    test-on-return: false
+    poolPreparedStatements: true
+    validation-query:
+    min-evictable-idle-time-millis: 30000
+mybatis-plus:
+  mapper-locations: classpath*:com/weina/**/*.xml
+  type-aliases-package: com.weina.imhistory.entity
+  global-config:
+    db-config:
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)

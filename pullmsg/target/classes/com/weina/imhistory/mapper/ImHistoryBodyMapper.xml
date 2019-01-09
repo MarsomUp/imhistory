@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weina.imhistory.mapper.ImHistoryBodyMapper">
+    <resultMap id="ImHistoryBodyResultMap" type="com.weina.imhistory.entity.ImHistoryBody" >
+        <result column="id" property="id"/>
+        <result column="history_id" property="historyId"/>
+        <result column="msg_type" property="msgType"/>
+        <result column="msg" property="msg"/>
+        <result column="file_length" property="fileLength"/>
+        <result column="file_name" property="fileName"/>
+        <result column="secret" property="secret"/>
+        <result column="size" property="size"/>
+        <result column="url" property="url"/>
+        <result column="addr" property="addr"/>
+        <result column="lat" property="lat"/>
+        <result column="lng" property="lng"/>
+        <result column="length" property="length"/>
+        <result column="thumb" property="thumb"/>
+        <result column="thumb_secret" property="thumbSecret"/>
+    </resultMap>
+    <!-- wn_im_history_body table all fields -->
+    <sql id="ImHistoryBody_Column_List" >
+        wn_im_history_body.id,	
+        wn_im_history_body.history_id,
+        wn_im_history_body.msg_type,
+        wn_im_history_body.msg,
+        wn_im_history_body.file_length,
+        wn_im_history_body.file_name,
+        wn_im_history_body.secret,
+        wn_im_history_body.size,
+        wn_im_history_body.url,
+        wn_im_history_body.addr,
+        wn_im_history_body.lat,
+        wn_im_history_body.lng,
+        wn_im_history_body.length,
+        wn_im_history_body.thumb,
+        wn_im_history_body.thumb_secret
+    </sql>
+    
+    <insert id="addPatch" parameterType="java.util.List">
+        insert into wn_im_history_body (id, history_id, msg_type, msg, file_length, file_name, secret,
+        size, url, addr, lat, lng, length, thumb, thumb_secret)
+        values 
+        <foreach collection="list" item="imHistoryBody" index="index" separator=",">
+            (
+              #{imHistoryBody.id},
+              #{imHistoryBody.historyId},
+              #{imHistoryBody.msgType},
+              #{imHistoryBody.msg},
+              #{imHistoryBody.fileLength},
+              #{imHistoryBody.fileName},
+              #{imHistoryBody.secret},
+              #{imHistoryBody.size},
+              #{imHistoryBody.url},
+              #{imHistoryBody.addr},
+              #{imHistoryBody.lat},
+              #{imHistoryBody.lng},
+              #{imHistoryBody.length},
+              #{imHistoryBody.thumb},
+              #{imHistoryBody.thumbSecret}
+            )
+        </foreach>
+    </insert>
+
+    <update id="updatePatch" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";" close="" open="">
+            update wn_im_history_body
+            <set>
+                url = #{item.url},thumb = #{item.thumb}
+            </set>
+            where id = ${item.id}
+        </foreach>
+    </update>
+
+</mapper>
