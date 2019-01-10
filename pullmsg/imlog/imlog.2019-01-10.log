@@ -1,0 +1,51 @@
+3907 [main] INFO  com.weina.imhistory.TestService - Starting TestService on Mayc with PID 5920 (started by Administrator in E:\Workspaces\IdeaProjects\imhistory\pullmsg)
+3907 [main] INFO  com.weina.imhistory.TestService - No active profile set, falling back to default profiles: default
+10005 [main] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+13642 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14692 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+14926 [main] INFO  com.weina.imhistory.TestService - Started TestService in 13.319 seconds (JVM running for 15.989)
+16257 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+16257 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16257 [Thread-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed
+3477 [main] INFO  com.weina.imhistory.TestService - Starting TestService on Mayc with PID 4348 (started by Administrator in E:\Workspaces\IdeaProjects\imhistory\pullmsg)
+3477 [main] INFO  com.weina.imhistory.TestService - No active profile set, falling back to default profiles: default
+6849 [main] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+9783 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+10627 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+10832 [main] INFO  com.weina.imhistory.TestService - Started TestService in 9.301 seconds (JVM running for 11.961)
+11736 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+11736 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11752 [Thread-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed
+4025 [main] INFO  com.weina.imhistory.TestService - Starting TestService on Mayc with PID 4512 (started by Administrator in E:\Workspaces\IdeaProjects\imhistory\pullmsg)
+4041 [main] INFO  com.weina.imhistory.TestService - No active profile set, falling back to default profiles: default
+6959 [main] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+9902 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+10729 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+10947 [main] INFO  com.weina.imhistory.TestService - Started TestService in 9.215 seconds (JVM running for 12.125)
+11743 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+11743 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11758 [Thread-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed
+3447 [main] INFO  com.weina.imhistory.TestService - Starting TestService on Mayc with PID 4772 (started by Administrator in E:\Workspaces\IdeaProjects\imhistory\pullmsg)
+3447 [main] INFO  com.weina.imhistory.TestService - No active profile set, falling back to default profiles: default
+6957 [main] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+10047 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+10890 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+11092 [main] INFO  com.weina.imhistory.TestService - Started TestService in 8.549 seconds (JVM running for 12.317)
+11826 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+11826 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+11826 [Thread-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed
+2137 [main] INFO  com.weina.imhistory.TestService - Starting TestService on Mayc with PID 5840 (started by Administrator in E:\Workspaces\IdeaProjects\imhistory\pullmsg)
+2137 [main] INFO  com.weina.imhistory.TestService - No active profile set, falling back to default profiles: default
+6319 [main] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+9563 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+10515 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+10749 [scheduling-1] INFO  c.w.i.common.IMMsgHistorySchedule - 任务调度开始
+10765 [main] INFO  com.weina.imhistory.TestService - Started TestService in 9.751 seconds (JVM running for 11.622)
+10765 [scheduling-1] INFO  c.w.i.common.IMMsgHistorySchedule - 当前时间：2019011009
+10765 [scheduling-1] INFO  c.w.i.common.IMMsgHistorySchedule - 拉取2019011006的消息
+11295 [scheduling-1] ERROR c.w.im.easemob.comm.ResponseHandler - error_code:404 error_msg:Not Found error_desc:Failed to find chat message history download url for appkey: 1117181106211103#hx-987456123, time: 2019011006
+11311 [scheduling-1] INFO  c.w.i.common.IMMsgHistorySchedule - 本次拉取的数据为空
+11311 [scheduling-1] INFO  c.w.i.common.IMMsgHistorySchedule - 本次拉取数据共消耗：561ms
+12371 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+12371 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+12387 [Thread-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed

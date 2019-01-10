@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -42,7 +43,7 @@ public class IMMsgContentReplaceThread implements Runnable {
         Thread.currentThread().setName("IMMsgContentReplaceThread");
         // 在拉取任务中，消息可能还没有完全添加到数据库，所以在这里等待一会再执行
         try {
-            Thread.sleep(1 * 60 * 1000);
+            Thread.sleep(30 * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -95,7 +96,7 @@ public class IMMsgContentReplaceThread implements Runnable {
                             return body;
                         }
                     } catch (IOException e) {
-                        LOGGER.error("从环信服务器下载文件异常，对应的消息为："+body.toString());
+                        LOGGER.error("从环信服务器下载文件异常，对应的消息为："+body.toString(), e);
                     } finally {
                         if (in != null) {
                             try {
@@ -155,6 +156,14 @@ public class IMMsgContentReplaceThread implements Runnable {
     }
 
     private InputStream downLoad(String fileUrl) throws IOException {
+        // 先判断文件URL是否是以https开头，如果是，就得忽略ssl证书
+        if (fileUrl.startsWith("https")) {
+            try {
+                SSLUtil.ignoreSsl();
+            } catch (Exception e) {
+                LOGGER.error("下载文件异常", e);
+            }
+        }
         URL url = new URL(fileUrl);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -163,7 +172,7 @@ public class IMMsgContentReplaceThread implements Runnable {
         conn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
         conn.connect();
         LOGGER.info("获取文件的大小为"+conn.getContentLength());
-        InputStream in = new GZIPInputStream(conn.getInputStream());
-        return in;
+        DataInputStream dataInputStream = new DataInputStream(conn.getInputStream());
+        return dataInputStream;
     }
 }

@@ -27,7 +27,7 @@ public class IMMsgHistorySchedule {
     private static final Logger LOGGER = LoggerFactory.getLogger(IMMsgHistorySchedule.class);
 
     public static final long ONE_HOUR = 60 * 60 * 1000;
-    public static final long test = 60 * 1000;
+    public static final long one_minute = 60 * 1000;
     public static final long half_hour = 30 * 60 * 1000;
 
     @Autowired
@@ -35,7 +35,7 @@ public class IMMsgHistorySchedule {
     @Autowired
     private IdWorker idWorker;
 
-    @Scheduled(fixedDelay = half_hour)
+    @Scheduled(fixedDelay = ONE_HOUR)
     public void msgJob() {
         long startTime = System.nanoTime();
         LOGGER.info("任务调度开始");
@@ -121,9 +121,8 @@ public class IMMsgHistorySchedule {
             // 开始执行替换工作
             IMMsgContentReplaceThread thread = new IMMsgContentReplaceThread(histories);
             commonTreadPools.addThred(thread);
-            System.out.println("GOOD:"+messages.size());
         }
         long endTime = System.nanoTime();
-        LOGGER.info("本次拉取数据共消耗："+(endTime-startTime)+"纳秒");
+        LOGGER.info("本次拉取数据共消耗："+(endTime-startTime)/(1000 * 1000)+"ms");
     }
 }
